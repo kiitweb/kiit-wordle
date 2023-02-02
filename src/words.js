@@ -1,4 +1,5 @@
 const words = [
+  
   "poise",
   "enjoy",
   "drink",
@@ -298,6 +299,6 @@ const words = [
   "xerox",
   "tutor",
   "cheer",
-  "value",
+  "value"
 ];
 export default words;

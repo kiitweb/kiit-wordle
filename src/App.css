@@ -65,3 +65,11 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar{
+  background-color: #0ca750;
+  color:#f0e575;
+}
+.setting{
+  color:#f0e575 ;
+}
