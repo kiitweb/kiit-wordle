@@ -1,228 +1,84 @@
-# React Wordle
+![wordle screenshot](https://github.com/MahmoudFettal/wordle/blob/master/public/wordle.jpeg)
+# I made Wordle XD
+[![GitHub license](https://img.shields.io/github/license/MahmoudFettal/wordle)](https://github.com/MahmoudFettal/wordle/blob/master/LICENSE)
+[![GitHub contributors](https://img.shields.io/github/contributors/MahmoudFettal/wordle.svg)](https://GitHub.com/MahmoudFettal/wordle/graphs/contributors/)
+[![GitHub issues](https://img.shields.io/github/issues/MahmoudFettal/wordle.svg)](https://GitHub.com/MahmoudFettal/wordle/issues/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/MahmoudFettal/wordle.svg)](https://GitHub.com/MahmoudFettal/wordle/pulls/)
 
-This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
+[![GitHub watchers](https://img.shields.io/github/watchers/MahmoudFettal/wordle?style=social&label=Watch)](https://GitHub.com/MahmoudFettal/wordle/watchers/)
+[![GitHub forks](https://img.shields.io/github/forks/MahmoudFettal/wordle?style=social&label=Fork)](https://GitHub.com/MahmoudFettal/wordle/network/)
+[![GitHub stars](https://img.shields.io/github/stars/MahmoudFettal/wordle?style=social&label=Star)](https://GitHub.com/MahmoudFettal/wordle/stargazers/)
 
-[**Try out the demo!**](https://reactle.vercel.app/)
+Hello everyone 👋, I am glad to see you here I know it ain't much but this is the game wordle (popular in twitter recently!) I made using ReactJS the funny part is that I didn't write a single line of CSS (Actually I wrote 3 but you didn't see anything 🤫).
+you can play it live using the link: https://mahmoudfettal.github.io/wordle/
 
-## Build and run
+# Getting Started with Create React App
 
-### To Run Locally:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Clone the repository and perform the following command line actions:
+## Available Scripts
 
-```bash
-$> cd react-wordle
-$> npm install
-$> npm run start
-```
+In the project directory, you can run:
 
-### To build/run docker container:
+### `npm start`
 
-#### Development
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```bash
-$> docker build -t reactle:dev -f docker/Dockerfile .
-$> docker run -d -p 3000:3000 --name reactle-dev reactle:dev
-```
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Open [http://localhost:3000](http://localhost:3000) in browser.
+### `npm test`
 
-#### Production
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```bash
-$> docker build --target=prod -t reactle:prod -f docker/Dockerfile .
-$> docker run -d -p 80:8080  --name reactle-prod reactle:prod
-```
+### `npm run build`
 
-Open [http://localhost](http://localhost) in browser. See the [entry in the FAQ](#why-does-sharing-of-results-not-work) below about requirements for sharing of results.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## FAQ
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### How can I change the length of a guess?
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The default configuration is for solutions and guesses of length five, but it is flexible enough to handle other lengths, even variable lengths each day.
+### `npm run eject`
 
-To configure for a different constant length:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-- Update the `WORDS` array in [src/constants/wordlist.ts](src/constants/wordlist.ts) to include only words of the new length.
-- Update the `VALID_GUESSES` array in [src/constants/validGuesses.ts](src/constants/validGuesses.ts) to include only words of the new length.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-To configure for variable lengths:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- Update the `WORDS` array in [src/constants/wordlist.ts](src/constants/wordlist.ts) to include words of any of the variable lengths desired.
-- Update the `VALID_GUESSES` array in [src/constants/validGuesses.ts](src/constants/validGuesses.ts) to include words of any of the variable lengths desired.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-Note that guesses are validated against both the length of the solution, and presence in VALID_GUESSES.
+## Learn More
 
-### How can I create a version in another language?
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- In [.env](.env):
-  - Update the title and the description
-  - Set the `REACT_APP_LOCALE_STRING` to your locale
-- In [public/index.html](public/index.html):
-  - Update the "You need to enable JavaScript" message
-  - Update the language attribute in the HTML tag
-  - If the language is written right-to-left, add `dir="rtl"` to the HTML tag
-- Update the name and short name in [public/manifest.json](public/manifest.json)
-- Update the strings in [src/constants/strings.ts](src/constants/strings.ts)
-- Add all of the five letter words in the language to [src/constants/validGuesses.ts](src/constants/validGuesses.ts), replacing the English words
-- Add a list of goal words in the language to [src/constants/wordlist.ts](src/constants/wordlist.ts), replacing the English words
-- Update the "Settings" modal in [src/components/modals/SettingsModal.tsx](src/components/modals/SettingsModal.tsx)
-- Update the "Info" modal in [src/components/modals/InfoModal.tsx](src/components/modals/InfoModal.tsx)
-- Update the "DatePicker" modal in [src/components/modals/DatePickerModal.tsx](src/components/modals/DatePickerModal.tsx)
-- Update the statistics migration components modal in:
-  - [src/components/stats/MigrationIntro.tsx](src/components/stats/MigrationIntro.tsx)
-  - [src/components/stats/EmigratePanel.tsx](src/components/stats/EmigratePanel.tsx)
-  - [src/components/stats/ImmigratePanel.tsx](src/components/stats/ImmigratePanel.tsx)
-  - [src/components/modals/MigrateStatsModal.tsx](src/components/modals/MigrateStatsModal.tsx)
-- To ensure that migration codes are unique to your application, update the Blowfish encryption key and initialization vector with random 30 character and 8 character strings in [src/constants/settings.ts](src/constants/settings.ts)
-- If the language has letters that are not present in English update the keyboard in [src/components/keyboard/Keyboard.tsx](src/components/keyboard/Keyboard.tsx)
-- If the language is written right-to-left, prepend `\u202E` (the unicode right-to-left override character) to the return statement of the inner function in `generateEmojiGrid` in
-  [src/lib/share.ts](src/lib/share.ts)
-- To enable replaying past days' games, set `ENABLE_ARCHIVED_GAMES` to `true`
-- Set `DATE_LOCALE` to a suitable locale string as defined in [date-fns](https://github.com/date-fns/date-fns/tree/main/src/locale).
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### How can I add usage tracking?
+### Code Splitting
 
-This repository includes support for Google Analytics or [Plausible Analytics](https://plausible.io), but, by default, this is disabled.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-To enable Google Analytics:
+### Analyzing the Bundle Size
 
-- Create a Google Analytics 4 property and obtain the measurement ID (of the format `G-XXXXXXXXXX`)
-- In [.env](.env), add `REACT_APP_GOOGLE_MEASUREMENT_ID=G-XXXXXXXXXX`
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Keep in mind that your region might have legislation about obtaining a user's consent before enabling trackers. This is up to downstream repos to implement.
+### Making a Progressive Web App
 
-To enable Plausible Analytics:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-- Create a new website with Plausible Analytics with a given domain, e.g. `example.app`
-- In [.env](.env), add `REACT_APP_PLAUSIBLE_DOMAIN=example.app`
+### Advanced Configuration
 
-### Why does sharing of results not work?
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-For mobile and wearable devices and smart TVs, sharing of results is initially attempted using the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API). For other devices or when sharing to the Web Share API fails, the results are written to the clipboard. Both these methods will succeed only in a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts), which require you to implement the HTTPS protocol when hosting this repo on a public domain.
+### Deployment
 
-## Projects built using this repo
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### Other languages
+### `npm run build` fails to minify
 
-- [Arwordle](https://arwordle.netlify.app/): Arabic
-- [Boludle](https://www.boludle.com/): Argentinian
-- [Gerdle](https://gerdle.vext.co.uk/): Cornish (Kernowek)
-- [Jwordle](https://jwordle.vercel.app/): Japanese
-- [Katadel](https://katadel.vercel.app/): Jawi (Malay Arabic script)
-- [Keclap](https://keclap.xyz/): Sundanese
-- [Kelmaly](https://kelmaly.com/): Arabic
-- [Kerdle](https://kerdle.vercel.app/): Cornish/Kernewek (Standard Written Form)
-- [Latindictionary.io](https://wordle.latindictionary.io/): Latin
-- [Lexoula](https://lexoula.com/): Ελληνικά (Greek)
-- [Malay](https://malay-wordle.netlify.app/): Bahasa Malaysia
-- [Mondle](https://mondle.vercel.app/): Mongolian
-- [Parig](https://www.parig.xyz/): Western Armenian
-- [Parolette](https://parolette.netlify.app/): Italian
-- [Parolle.it](https://parolle.it): Italian
-- [Pashtoodle](https://pashtoodle.lingdocs.com): Pashto
-- [Persian](https://www.persian-wordle.ir/): Persian (Farsi)
-- [Persiga](https://www.persi.ga/): Portuguese
-- [Pinyin](https://www.pinyindle.com/): Pinyin (romanization system for Mandarin Chinese)
-- [Rudle](https://rudle.vercel.app): Russian
-- [Sindhal](https://hellosindh.com/sindhal): Sindhi
-- [Szózat](https://szozat.miklosdanka.com/): Hungarian
-- [So'zzana](https://sozzana.netlify.app/): O'zbek (Lotin)
-- [Tatar](https://tatardle.vercel.app/): Tatar (Turkic Language)
-- [Tàu Tâi-gí (Taigi Wordle)](https://tau.taigi.info/): Taigi (Taiwanese)
-- [Telugu](https://teluguwordle.com): Telugu (South Indian Language)
-- [Tlembung](https://tlembung.vercel.app/): Javanese
-- [Tugma](https://tugma.vercel.app): Hiligaynon (spoken in the Philippines)
-- [Ukrainian](https://goroh.pp.ua/games/wordle): Ukrainian
-- [Urdle](https://urdle.chaoticity.com/): Urdu
-- [Vārdulis](https://wordle.lielakeda.lv/): Latvian
-- [Wokle](https://wokle.njamed.com/): Bininj Kunwok
-- [Word-leh!](https://word-leh.com): Singlish
-- [Wordle (BOS)](https://elahmo.github.io/wordle/): Bosnian
-- [Wordle (Spanish)](https://wordle-es.xavier.cc): Spanish/Espanol
-- [Wordle-RO](https://wordle-ro.sirb.net/): Romanian
-- [Wortel](https://wortel.wrintiewaar.co.za): Afrikaans
-- [Wörtchen](https://woertchen.sofacoach.de): German
-- [SGWordle](https://sgwordle.now.sh/): Swiss German
-- [kelma.mt](https://kelma.mt): Maltese
-- [Žodelė](https://zodele.lt): Lithuanian
-- [Слівце](https://slivce.com/): Ukrainian
-- [ਪੰਜਾਬੀ](https://punjabipuzzle.netlify.app/): Punjabi
-- [சொல்லாடல் Soladle](https://omtamil.com/soladle): Tamil
-- [字知之明](https://zedaizd.github.io/zh-char-puzzle/): Traditional Chinese
-- [꼬들 - 한국어](https://belorin.github.io/): Korean
-- [한글 풀어쓰기 5자](https://nakosung.github.io/wordle/): Korean
-- [ไทย](https://buddhistuniversity.net/wordle-thai/): Thai
-- [ಕನ್ನಡ](https://www.aksharabandha.co.in/): Kannada
-
-### Fun themes
-
-- [Airportle](https://airportle.scottscheapflights.com/): Airport Codes
-- [Anidal](https://anidal-abrarhayat.web.app/): Animals
-- [Birdle - Emojis](https://birdle.dev): Bird emojis
-- [Birdle](https://www.creek-birdle.com/): Birds
-- [Buildly](https://buildly.procurepro.co/): Construction themed
-- [Crosswordle](https://crosswordle.mekoppe.com/): Crossword mashup
-- [DALL-e-dle](https://dall-e-dle.vercel.app/): Provides a DALL-E generated image of the word as a clue
-- [Dundle](https://dundle.dunmiffcord.com/): The Office
-- [FFXIVrdle](https://ffxivrdle.com/): Final Fantasy XIV
-- [Harry Potter](https://www.harrypotterwordle.com/): Harry Potter
-- [JoJodle](https://jojo-news.com/fun/jojodle/): JoJo’s Bizarre Adventure
-- [Mahjong Handle](https://mahjong-handle.update.sh/): Mahjong Hands
-- [Filmle](https://filmle.now.sh/): Movie titles
-- [Fletcherdle](https://www.fletcherdle.com/): American singer-songwriter FLETCHER
-- [Lyricle](https://www.lyricle.app/): Lyrics
-- [Midnightle](https://midnightle.flra.eu): Taylor Swift's Midnights album
-- [Movie Wordle](https://movie-wordle.vercel.app): Bollywood
-- [Murdle](https://murdle.vercel.app/): Spooky hangman mashup
-- [Pawnle](https://pawnle.vercel.app/): Parks and Recreation
-- [Poker Handle](https://kikychow.github.io/poker-wordle/): Poker
-- [Poker Handle 2](https://poker-handle2.com/): Poker
-- [Polygonle](https://www.polygonle.com/): Wordle with a shape-based clue for each character
-- [Quettale](https://quettale.vercel.app/): Quenya, Elven language in LOTR
-- [Radiole](https://radiole.vercel.app/): Radio-themed (for World Radio Day)
-- [RareWordle](https://rwordle.vercel.app/): Word guessing with multiple simultaneous solutions of varying "values", all created from the same letters. The goal is to find the most obscure solution. It is inspired by the TV game show Pointless.
-- [Reverdle](https://reverdle.now.sh/): Wordle but in reverse, that is one has to make as many guesses possible which do not have any green letter (i.e. a letter in the correct location compared to the hidden solution).
-- [Spotle](https://spotlegame.co.uk): Wordle with an extra block, the incognito block
-- [Squirdle](https://squirdle-inky.vercel.app/): Pokeman
-- [Tacticle](https://tacticle.co/): Chess puzzles
-- [Taylordle](https://www.taylordle.com/): Taylor Swift
-- [Trekle](https://treklegame.com): Star Trek
-- [Weedel](https://meetmeinouter.space/wordle/): Video game characters
-- [Wordle.cl](https://www.wordle.cl): Chilean modisms, cities, places
-- [Wrdl](https://wrdl-abae.vercel.app/): Words that are 5 letters long after getting rid of their vowels
-- [WROUD](https://www.wroud.net/): W R O U D is a simple word game that challenges people to find a six-letter word in 3 guesses from a cloud of letters.
-- [香港麻雀 糊 dle](https://hkwudle.vercel.app/): Mahjong hands under Hong Kong rules
-
-### Fun themes in other languages
-
-- [German Harry Potter Wordle](https://hpwordle.de)
-- [Spotle](https://spotlegame.co.uk/portuguese): Spotle, but in Portuguese
-
-### Math, Acronyms, Science, Tech, and more
-
-- [AI-powered](https://github.com/asirota/wordle-ai): Includes an AI component
-- [Biordle](https://biordle.grenteam.com): Biology
-- [Colordle](https://github.com/necropolina/colordle): Guess the hexadecimal color code of the background
-- [Genele](https://andrewholding.github.io/gene-wordle/): Gene symbols
-- [Jazle](https://jazle.quest/): Javascript
-- [Mathler](https://www.mathler.com/): Find the solution that equals X
-- [Morsel](https://plingbang.github.io/morsel/): Morse
-- [Numble](https://rbrignall.github.io/numble/): Maths
-- [Opsle](https://opsle.vercel.app/): Ops
-- [Passwordle](https://passwordle.sp8c3.com/): Passwords
-- [Perfdle](https://perfdle.com): Performance Testers and Engineers, DevOps, and Observability
-- [Primel](https://converged.yt/primel/): Prime numbers
-- [Qwordle](https://qwordle.bhat.ca/): Quantum version of Wordle (uses entangled word-pairs)
-- [Quantle](https://deduckproject.github.io/quantle/): Another quantum variant where guesses are quantum equations
-- [Rundle](https://furstenheim.github.io/react-wordle/): Like wordle, but only last three guesses are considered.
-- [Stockle](https://stockle.win/): Guess the stock or ETF
-- [Syscordle](https://nezza.github.io/syscordle/): SYSCALL
-- [TwoKinds](https://twokinds.me): There are only two kinds of people in this World.
-- [UNLOCOdle](https://unlocodle.collabital.com/): UNLOCODEs
-- [Visionle](https://orisenbazuru.github.io/visionle/): Guess the label of randomly chosen image from ImageNet/ImageNet-Sketch dataset (Machine learning)
-- [Zip-zap-bam!](https://aneets.github.io/zip-zap-bam/): Word ladder game.
-- [0xdle](https://0xdle.vercel.app/): Hexadecimal
-
-_Want to add one to the list? Please make a pull request._
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
